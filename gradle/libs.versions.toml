@@ -1,0 +1,48 @@
+[versions]
+kotlin = "2.3.0"
+kotlin-coroutines = "1.10.2"
+kotlinx-serialization = "1.10.0"
+
+ktoml = "0.7.1"
+
+paper-api = "1.21.11-R0.1-SNAPSHOT"
+velocity-api = "3.5.0-SNAPSHOT"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+kotlinx-coroutines-jdk8 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8", version.ref = "kotlin-coroutines" }
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-toml-core = { module = "com.akuleshov7:ktoml-core", version.ref = "ktoml" }
+kotlinx-serialization-toml-file = { module = "com.akuleshov7:ktoml-file", version.ref = "ktoml" }
+
+# Bukkit libs
+paper = { module = "io.papermc.paper:paper-api", version.ref = "paper-api" }
+
+# Velocity libs
+velocity = { module = "com.velocitypowered:velocity-api", version.ref = "velocity-api" }
+
+[bundles]
+kotlin-common = [
+    "kotlin-stdlib",
+    "kotlin-reflect",
+    "kotlinx-coroutines-core",
+    "kotlinx-coroutines-jdk8",
+    "kotlinx-serialization-core",
+    "kotlinx-serialization-json",
+    "kotlinx-serialization-toml-core",
+    "kotlinx-serialization-toml-file"
+]
+
+velocity-api = [
+    "velocity"
+]
+
+bukkit-api = [
+    "paper",
+]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
